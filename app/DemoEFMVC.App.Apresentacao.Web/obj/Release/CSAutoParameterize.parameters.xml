@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ContextoLocalDB-Web.config Connection String" description="ContextoLocalDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0;Initial Catalog=DemoEFMVC;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\Demos\\DemoEFMVC\\app\\DemoEFMVC\.App\.Apresentacao\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ContextoLocalDB']/@connectionString" />
+  </parameter>
+</parameters>

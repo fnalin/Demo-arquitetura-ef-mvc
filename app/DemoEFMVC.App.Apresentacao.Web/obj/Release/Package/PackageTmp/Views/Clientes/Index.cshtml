@@ -1,0 +1,186 @@
+﻿@model IList<DemoEFMVC.App.Dominio.Entidade.Cliente>
+@{
+    ViewBag.Title = "Clientes";
+}
+<h2>@ViewBag.Title</h2>
+<br />
+<div>
+    @Html.ActionLink("Cadastrar Novo", "Novo", null, new { @class = "btn btn-default" })
+    <button class="btn btn-danger" disabled id="delete-cli-btn">Excluir Selecionados</button>
+    <div class="no-block pull-right">
+        <select id="tipo-grid-select" class="form-control">
+            <option value="0">Grid Click</option>
+            <option value="1">Grid Check</option>
+        </select>
+    </div>
+</div>
+<br />
+
+<div id="grid-clientes" class="table-responsive table-grid-clientes">
+    <table class="table table-condensed table-hover table-striped">
+        <thead>
+            <tr>
+                <th class="cel-check"><input type="checkbox" id="item-all" /></th>
+                <th>Nome</th>
+                <th>Nascimento</th>
+                <th>Sexo</th>
+            </tr>
+        </thead>
+        <tfoot></tfoot>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@item.ID">
+                    <td class="cel-check"><input type="checkbox" class="chk-item" value="@item.ID" /></td>
+                    <td>
+                        <span>
+                            @item.Nome
+                        </span>
+                    </td>
+                    <td>
+                        @item.Nascimento.ToShortDateString()
+                    </td>
+                    <td>
+                        @item.Sexo
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="delete-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Exclusão</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button id="cancelar-delete-btn" type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button id="confirmar-delete-btn" type="button" class="btn btn-danger">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        (function () {
+
+            var editar = function () {
+                var $id = $(this).data("id");
+                var $url = "@Url.Action("Editar", "Clientes")/";
+                window.location.href = $url + $id;
+            };
+
+            $("#tipo-grid-select").on("change", function () {
+                $("#delete-cli-btn").attr("disabled", "disabled");
+                if ($(this).val() == 0) {
+                    $("#grid-clientes").addClass("table-grid-clientes").find(".cel-check").hide();
+                    $("#grid-clientes tbody>tr").off().on("click", editar);
+                }
+                else {
+                    $("#grid-clientes").removeClass("table-grid-clientes").find(".cel-check").show();
+                    $("#grid-clientes tbody>tr").off();
+                }
+            });
+
+            $("#item-all").on("click", function () {
+                var $checkboxes = $(this).closest('table').find(':checkbox');
+                if ($(this).is(':checked')) {
+                    $checkboxes.prop('checked', true);
+                    $("#delete-cli-btn").removeAttr("disabled");
+                } else {
+                    $checkboxes.prop('checked', false);
+                    $("#delete-cli-btn").attr("disabled", "disabled");
+                }
+            });
+
+            $("td.cel-check").on("click", function () {
+                if (!$(this).is(':checked')) {
+                    $("#item-all").prop('checked', false);
+
+                    if ($(".chk-item:checked").length > 0)
+                        $("#delete-cli-btn").removeAttr("disabled");
+                    else
+                        $("#delete-cli-btn").attr("disabled", "disabled");
+                }
+            });
+
+            $('#delete-modal').on('show.bs.modal', function (e) {
+                $("#confirmar-delete-btn").removeAttr("disabled");
+                $("#delete-modal .modal-body").empty().append(mensagens.Aviso);
+            });
+
+            $("#delete-cli-btn").on("click", function () {
+                $("#delete-modal").modal({ backdrop: "static", keyboard: false, show: true });
+
+                var $clientes = $(".chk-item:checked").closest('td').next("td");
+                $clientes.each(function (index, item) {
+                    var cli = $(item).find("span").text().trim();
+                    var li = $("<li>");
+                    li.append(cli);
+                    $("#delete-modal .modal-body>ul").append(li);
+                });
+            });
+            
+            var mensagens = {
+                Excluindo: '<p class="aviso bg-info no-block pull-left wait text-left" style="padding:10px 20px;max-width: 300px;">\
+                            <i class="glyphicon glyphicon-refresh animando-icon-refresh"></i>&nbsp;<span>Aguarde, contatando servidor</span>\
+                            </p>',
+
+                Erro:       '<p class="erro bg-danger error text-left" style="padding:10px 20px;max-width: 300px;">\
+                            <i class="glyphicon glyphicon-warning-sign"></i>&nbsp;<strong><span></span></strong>\
+                            </p>',
+
+                Aviso:      '<p>Deseja excluir o(s) cliente(s) abaixo?</p>\
+                            <ul></ul>',
+
+                Excluido:   '<p>Cliente(s) excluído(s) com sucesso</p>'
+            };
+
+            $("#confirmar-delete-btn").on("click", function () {
+                var itensDel = $('.chk-item:checked').map(function () {
+                    return this.value;
+                }).get().join();
+
+                var urlExcluirClientes = "@Url.Action("RemoverClientes")";
+
+                $.ajax({
+                    type: 'POST',
+                    url: urlExcluirClientes,
+                    data: {ids:itensDel},
+                    dataType: 'json',
+                    cache: false,
+                    async: true,
+                    beforeSend: function () {
+                        $("#confirmar-delete-btn").attr("disabled", "disabled");
+                        $(mensagens.Excluindo).insertBefore("#cancelar-delete-btn");
+                    },
+                    success: function (data) {
+                        debugger;
+                        if (data.msg == "")
+                            $("#delete-modal .modal-body").empty().append(mensagens.Excluido);
+                        else {
+                            $("#delete-modal .modal-body").empty().append(mensagens.Erro);
+                            $("p.erro span").text(data.msg);
+                        }
+
+                    },
+                    error: function () {
+                        //alert("Erro!");
+                    },
+                    complete: function () {
+                        $("p.aviso").remove();
+                        var $clientes = $(".chk-item:checked").closest('tr');
+                        $clientes.remove();
+                    }
+                });
+            });
+
+            $("#tipo-grid-select").change();
+        })();
+    </script>
+}

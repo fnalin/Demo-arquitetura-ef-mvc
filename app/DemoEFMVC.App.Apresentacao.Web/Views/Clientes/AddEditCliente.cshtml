@@ -1,0 +1,113 @@
+﻿@model DemoEFMVC.App.Apresentacao.Web.ViewModels.ClienteVM
+@{
+    var mensagem = Model.ID == 0 ? "Adicionar" : "Editar";
+    ViewBag.Title = mensagem + " cliente";
+    var txtID = Model.ID == 0 ? Html.Raw("&laquo; Auto Num &raquo;") : Html.Raw(Model.ID.ToString("D4"));
+
+    //imagem
+    var imgSrc = Url.Content("~/Content/img/Anonymous.png");
+    var nomeFoto = string.Empty;
+    if (Model.Foto != null && Model.Foto.Binario != null)
+    {
+        imgSrc = String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.Foto.Binario));
+        nomeFoto = Model.Foto.NomeArquivo;
+    }
+}
+
+<link href="~/Content/themes/darkness/jquery-ui.min.css" rel="stylesheet" />
+<h3>@ViewBag.Title</h3>
+
+<div class="form-horizontal">
+    <hr />
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "cliente-form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">ID</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control no-block text-center" disabled id="input-idFake" value="@txtID" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Nome</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control no-block caixa-grande", autofocus = "autofocus" } })
+                        @Html.ValidationMessageFor(model => model.Nome, "*", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Nascimento</label>
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Nascimento, new { htmlAttributes = new { @class = "form-control no-block txt-data", @id = "nascimento-input" } })
+                        <label for="nascimento-input" class="add-on"><i class="glyphicon glyphicon-calendar"></i></label>
+                        @Html.ValidationMessageFor(model => model.Nascimento, "*", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Sexo</label>
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(m => m.Sexo, null, new { @class = "form-control no-block" })
+                        @Html.ValidationMessageFor(model => model.Sexo, "*", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group hidden">
+                    <label class="control-label col-md-2">Arquivo</label>
+                    <div class="col-md-10">
+                        <input type="file" id="file" name="file" accept="image/*" data-max-size="10485760" class="form-control" />
+                        <input type="hidden" id="FotoNome" name="Foto.NomeArquivo" value="@nomeFoto" />
+                    </div>
+                </div>
+            </div>
+            <div id="foto-aluno-div" class="col-md-6">
+                <figure class="aluno-photo text-center">
+                    <img src="@imgSrc" height="220" alt="foto @Model.Nome" title="@Model.Nome" />
+                    <figcaption class="text-center">
+                        @if (Model.Foto != null)
+                        {
+                            <strong>@Model.Nome</strong>
+                        }
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <hr />
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-11">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                | <a href="@Url.Action("Index")">&laquo; Voltar</a>
+            </div>
+        </div>
+    }
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Scripts/datepicker_pt-br.js"></script>
+    <script>
+        var fotoAnonymous = "@Url.Content("~/Content/img/Anonymous.png")";
+        (function () {
+            $("#nascimento-input").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                onSelect: function () {
+                    $(this).parents(".form-group").removeClass("has-error");
+                    $("span[data-valmsg-for='Nascimento']").removeClass("field-validation-error").addClass("field-validation-valid");
+                }
+            }).mask('00/00/0099');
+
+        })();
+    </script>
+    <script src="~/Scripts/trocar-foto.js"></script>
+}

@@ -1,0 +1,4 @@
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.pdb

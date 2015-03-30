@@ -1,0 +1,9 @@
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\DemoEFMVC.Test.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\DemoEFMVC.Test.Dominio.pdb
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\DemoEFMVC.App.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\obj\Debug\DemoEFMVC.Test.Dominio.csprojResolveAssemblyReference.cache
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\obj\Debug\DemoEFMVC.Test.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\obj\Debug\DemoEFMVC.Test.Dominio.pdb
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\Moq.dll
+C:\Projects\Demos\DemoEFMVC\test\DemoEFMVC.Test.Dominio\bin\Debug\Moq.xml

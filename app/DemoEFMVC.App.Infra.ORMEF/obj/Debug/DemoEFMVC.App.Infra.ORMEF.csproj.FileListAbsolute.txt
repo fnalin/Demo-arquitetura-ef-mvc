@@ -1,0 +1,12 @@
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.dll.config
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.pdb
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Dominio.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.xml
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.csprojResolveAssemblyReference.cache
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.dll
+C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.pdb

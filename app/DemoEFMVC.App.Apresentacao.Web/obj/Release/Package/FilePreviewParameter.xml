@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="DemoEFMVC" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Projects\\Demos\\DemoEFMVC\\app\\DemoEFMVC\.App\.Apresentacao\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Projects\\Demos\\DemoEFMVC\\app\\DemoEFMVC\.App\.Apresentacao\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ContextoLocalDB-Web.config Connection String" description="" value="Data Source=tcp:d22v42z6zy.database.windows.net,1433;Initial Catalog=DemoEFMA1qbN0UFC;User Id=DemoEFMVC@d22v42z6zy;Password=1234@qwer" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\Demos\\DemoEFMVC\\app\\DemoEFMVC\.App\.Apresentacao\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ContextoLocalDB']/@connectionString" />
+  </parameter>
+</parameters>
