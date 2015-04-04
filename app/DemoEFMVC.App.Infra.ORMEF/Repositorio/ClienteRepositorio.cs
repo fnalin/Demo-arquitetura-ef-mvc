@@ -29,7 +29,12 @@ namespace DemoEFMVC.App.Infra.ORMEF.Repositorio
             dadosDB.Sexo = cliente.Sexo;
 
             //Atualizando a foto se necessário
-            if (cliente.Foto != null && cliente.Foto.Binario.Length > 0)
+            AtualizarFoto(cliente, dadosDB);
+        }
+
+        private void AtualizarFoto(Dominio.Entidade.Cliente cliente, Dominio.Entidade.Cliente dadosDB)
+        {
+            if (cliente.Foto.Binario.Length > 0)
             {
                 if (dadosDB.Foto != null)
                 {
@@ -50,9 +55,9 @@ namespace DemoEFMVC.App.Infra.ORMEF.Repositorio
                     dadosDB.Foto = novaFoto;
                 }
             }
-            else if (cliente.Foto != null && cliente.Foto.NomeArquivo != dadosDB.Foto.NomeArquivo)
+            else if (cliente.Foto.Binario.Length == 0 && cliente.Foto.NomeArquivo == null && dadosDB.Foto != null)
             {
-                dadosDB.Foto = null;
+                _ctx.Entry(dadosDB.Foto).State = System.Data.Entity.EntityState.Deleted;
             }
         }
 

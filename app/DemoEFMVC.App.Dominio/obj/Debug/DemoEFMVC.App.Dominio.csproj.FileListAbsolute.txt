@@ -2,3 +2,7 @@ C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Do
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Dominio.pdb
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.dll
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Dominio.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Dominio\bin\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Dominio\obj\Debug\DemoEFMVC.App.Dominio.pdb

@@ -10,3 +10,15 @@ C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramew
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.csprojResolveAssemblyReference.cache
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.dll
 C:\Projects\Demos\DemoEFMVC\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.pdb
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.dll.config
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Infra.ORMEF.pdb
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Dominio.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\DemoEFMVC.App.Dominio.pdb
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.xml
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.csprojResolveAssemblyReference.cache
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.dll
+C:\Users\Fabiano\Documents\GitHub\Demo-arquitetura-ef-mvc\app\DemoEFMVC.App.Infra.ORMEF\obj\Debug\DemoEFMVC.App.Infra.ORMEF.pdb
